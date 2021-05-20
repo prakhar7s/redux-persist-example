@@ -51,6 +51,7 @@ function App({ tasks, updateTasks, darkTheme, toggleTheme }) {
             e.preventDefault();
             updateTasks({ task, operation: "+" });
             document.querySelector("form").reset();
+            document.querySelector(".task-input").blur();
 
             // scroll to last
             const height = body.scrollHeight;
@@ -65,6 +66,7 @@ function App({ tasks, updateTasks, darkTheme, toggleTheme }) {
             <input
               onChange={(e) => setTask(e.target.value)}
               type="input"
+              className="task-input"
               placeholder="enter task"
             />
             <span className="add-button">

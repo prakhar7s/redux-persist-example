@@ -12,7 +12,7 @@ body {
   --fontColor: #000000;
   --taskItemBorderColor: rgba(0, 0, 0, 0.4);
   --borderColor: rgba(0, 0, 0, 0.15);
-  --buttonBg: rgb(134, 162, 255);
+  --buttonBg: rgba(134, 162, 255, 0.6);
   --addButton: rgba(8, 8, 8, 0.1);
 }
 
@@ -22,7 +22,7 @@ body {
   --fontColor: #ffffff;
   --taskItemBorderColor: rgba(255, 255, 255, 0.4);
   --borderColor: rgba(255, 255, 255, 0.1);
-  --buttonBg: rgb(9, 15, 99);
+  --buttonBg: rgba(9, 15, 99, 0.6);
   --addButton: rgba(34, 33, 33, 0.7);
 }
 
