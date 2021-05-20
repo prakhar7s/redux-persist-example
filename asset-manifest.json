@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/redux-persist-example/static/css/main.9227bb95.chunk.css",
+    "main.js": "/redux-persist-example/static/js/main.3f344ebe.chunk.js",
+    "main.js.map": "/redux-persist-example/static/js/main.3f344ebe.chunk.js.map",
+    "runtime-main.js": "/redux-persist-example/static/js/runtime-main.3df7bbed.js",
+    "runtime-main.js.map": "/redux-persist-example/static/js/runtime-main.3df7bbed.js.map",
+    "static/js/2.08316e7b.chunk.js": "/redux-persist-example/static/js/2.08316e7b.chunk.js",
+    "static/js/2.08316e7b.chunk.js.map": "/redux-persist-example/static/js/2.08316e7b.chunk.js.map",
+    "static/js/3.eee48958.chunk.js": "/redux-persist-example/static/js/3.eee48958.chunk.js",
+    "static/js/3.eee48958.chunk.js.map": "/redux-persist-example/static/js/3.eee48958.chunk.js.map",
+    "index.html": "/redux-persist-example/index.html",
+    "static/css/main.9227bb95.chunk.css.map": "/redux-persist-example/static/css/main.9227bb95.chunk.css.map",
+    "static/js/2.08316e7b.chunk.js.LICENSE.txt": "/redux-persist-example/static/js/2.08316e7b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3df7bbed.js",
+    "static/js/2.08316e7b.chunk.js",
+    "static/css/main.9227bb95.chunk.css",
+    "static/js/main.3f344ebe.chunk.js"
+  ]
+}
