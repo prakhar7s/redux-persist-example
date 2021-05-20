@@ -12,6 +12,8 @@ body {
   --fontColor: #000000;
   --taskItemBorderColor: rgba(0, 0, 0, 0.4);
   --borderColor: rgba(0, 0, 0, 0.15);
+  --buttonBg: rgb(134, 162, 255);
+  --addButton: rgba(8, 8, 8, 0.1);
 }
 
 .dark {
@@ -20,6 +22,8 @@ body {
   --fontColor: #ffffff;
   --taskItemBorderColor: rgba(255, 255, 255, 0.4);
   --borderColor: rgba(255, 255, 255, 0.1);
+  --buttonBg: rgb(9, 15, 99);
+  --addButton: rgba(34, 33, 33, 0.7);
 }
 
 html,
@@ -42,6 +46,7 @@ body {
   transition: color 0.3s ease, background 0.5s ease;
   padding: 0 20%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 header {
@@ -57,7 +62,6 @@ header {
 
 header #task-inp-form {
   margin: 20px;
-
   width: 40%;
 }
 
@@ -65,6 +69,8 @@ header #task-inp-form {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 100%;
+  box-shadow: 0 0 1px 0 var(--taskItemBorderColor);
 }
 #task-inp-form .inp-task input {
   font-size: 16px;
@@ -77,25 +83,36 @@ header #task-inp-form {
   box-shadow: 0 0 1px 0 var(--taskItemBorderColor);
 }
 
-#task-inp-form .inp-task span {
-  padding: 6.8px;
+#task-inp-form .inp-task .add-button {
+  height: 100%;
   width: 20%;
   display: grid;
   place-items: center;
-  background-color: rgba(34, 33, 33, 0.2);
+  background-color: var(--addButton);
   transition: background 0.5s ease;
+  opacity: 0.8;
+}
+
+#task-inp-form .inp-task .add-button .MuiSvgIcon-root {
+  color: white;
 }
 #task-inp-form .inp-task input:focus + .add-button {
-  background-color: #91ff00;
+  background-color: #ce2e23;
+}
+
+#task-inp-form .inp-task input:focus + .add-button {
+  opacity: 1;
 }
 .output-tasks {
   width: 100%;
+  margin-bottom: 60px;
 }
 
 .output-tasks li {
   list-style: none;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .output-tasks li .s-no {
@@ -108,11 +125,28 @@ header #task-inp-form {
   padding: 10px;
   width: 100%;
   box-shadow: 0 0 1px 0 var(--taskItemBorderColor);
+
+  /* to avoid overflow in a single line */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .output-tasks li span {
   margin-left: 10px;
   text-transform: capitalize;
+}
+
+.output-tasks li .delete-task-button .MuiSvgIcon-root {
+  opacity: 0.5;
+  color: red;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  font-size: 27px;
+}
+
+.output-tasks li .delete-task-button .MuiSvgIcon-root:hover {
+  opacity: 1;
 }
 
 .theme-change-button {
@@ -125,13 +159,41 @@ header #task-inp-form {
   color: var(--fontColor);
 }
 
+.goto-top {
+  position: fixed;
+  bottom: 11px;
+  left: 90%;
+  visibility: hidden;
+  background: var(--buttonBg);
+  padding: 5px 12px;
+  color: var(--fontColor);
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 0 1px 0 var(--taskItemBorderColor);
+}
+
+.goto-top::before {
+  position: absolute;
+  content: "";
+  border: solid;
+  border-color: var(--buttonBg) transparent;
+  bottom: -10px;
+  left: 30%;
+  border-width: 15px 10px 0 10px;
+}
+
 @media only screen and (max-width: 540px) {
   .app {
-    padding: 0 20px;
+    padding: 0 10px;
   }
 
   header #task-inp-form {
     margin: 20px;
     width: 75%;
+  }
+
+  .goto-top {
+    left: 77%;
   }
 }

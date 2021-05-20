@@ -2,9 +2,9 @@ const {
   default: randomTaskActionTypes,
 } = require("./random-task.action.types");
 
-export const updateTasks = (task) => ({
+export const updateTasks = (payload) => ({
   type: randomTaskActionTypes.UPDATE_TASK,
-  payload: task,
+  payload,
 });
 
 export const toggleTheme = () => ({

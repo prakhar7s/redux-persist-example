@@ -1,3 +1,5 @@
+import { updateTodo } from "./random-task.utils";
+
 const {
   default: randomTaskActionTypes,
 } = require("./random-task.action.types");
@@ -12,7 +14,7 @@ const randomTaskReducer = (state = INITIAL_STATE, action) => {
     case randomTaskActionTypes.UPDATE_TASK:
       return {
         ...state,
-        tasks: [...state.tasks, action.payload],
+        tasks: updateTodo(state.tasks, action.payload),
       };
 
     case randomTaskActionTypes.TOGGLE_THEME:
