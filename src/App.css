@@ -149,14 +149,20 @@ header #task-inp-form {
   opacity: 1;
 }
 
-.theme-change-button {
+.rem-def-btn {
   background: transparent;
   outline: none;
   border: 0;
 }
 
-.theme-change-button .MuiSvgIcon-root {
+.theme-change-button .MuiSvgIcon-root,
+.restore-btn {
   color: var(--fontColor);
+}
+
+.restore-btn .MuiSvgIcon-root {
+  color: greenyellow;
+  cursor: pointer;
 }
 
 .goto-top {

@@ -10,3 +10,7 @@ export const updateTasks = (payload) => ({
 export const toggleTheme = () => ({
   type: randomTaskActionTypes.TOGGLE_THEME,
 });
+
+export const restoreTodos = () => ({
+  type: randomTaskActionTypes.RESTORE_TODOS,
+});

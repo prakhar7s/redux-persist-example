@@ -4,6 +4,7 @@ import "./App.css";
 
 import {
   updateTasks,
+  restoreTodos,
   toggleTheme,
 } from "./redux/random-task/random-task.actions";
 
@@ -13,8 +14,9 @@ import WbSunnyIcon from "@material-ui/icons/WbSunny";
 import AddIcon from "@material-ui/icons/Add";
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import DeleteForeverTwoToneIcon from "@material-ui/icons/DeleteForeverTwoTone";
+import RestoreFromTrashIcon from "@material-ui/icons/RestoreFromTrash";
 
-function App({ tasks, updateTasks, darkTheme, toggleTheme }) {
+function App({ tasks, updateTasks, restoreTodos, darkTheme, toggleTheme }) {
   const [task, setTask] = useState("");
   const gotoTopRef = useRef();
 
@@ -75,7 +77,14 @@ function App({ tasks, updateTasks, darkTheme, toggleTheme }) {
           </div>
           <input type="submit" style={{ display: "none" }} />
         </form>
-        <button className="theme-change-button" onClick={toggleTheme}>
+
+        <button onClick={restoreTodos} className="rem-def-btn restore-btn">
+          <RestoreFromTrashIcon />
+        </button>
+        <button
+          className="rem-def-btn theme-change-button"
+          onClick={toggleTheme}
+        >
           {darkTheme ? <WbSunnyIcon /> : <NightsStayIcon />}
         </button>
       </header>
@@ -109,6 +118,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   updateTasks: (payload) => dispatch(updateTasks(payload)),
+  restoreTodos: () => dispatch(restoreTodos()),
   toggleTheme: () => dispatch(toggleTheme()),
 });
 
